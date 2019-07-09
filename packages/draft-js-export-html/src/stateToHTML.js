@@ -75,6 +75,7 @@ const ENTITY_ATTR_MAP: {[entityType: string]: AttrMap} = {
     target: 'target',
     title: 'title',
     className: 'class',
+    clicktracking: 'clicktracking',
   },
   [ENTITY_TYPE.IMAGE]: {
     src: 'src',
