@@ -83,6 +83,7 @@ const ENTITY_ATTR_MAP: {[entityType: string]: AttrMap} = {
     width: 'width',
     alt: 'alt',
     className: 'class',
+    style: 'style',
   },
 };
 
