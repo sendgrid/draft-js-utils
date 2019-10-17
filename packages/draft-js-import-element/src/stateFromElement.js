@@ -110,6 +110,7 @@ const DATA_ATTRIBUTE = /^data-([a-z0-9-]+)$/;
 const ELEM_ATTR_MAP = {
   a: {href: 'url', rel: 'rel', target: 'target', title: 'title', clicktracking: 'clicktracking'},
   img: {src: 'src', alt: 'alt', class: 'className', style: 'style', height: 'height', width: 'width'},
+  span: {class: 'className', style: 'style'},
 };
 
 const getEntityData = (tagName: string, element: DOMElement) => {
