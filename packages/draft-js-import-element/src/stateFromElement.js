@@ -157,6 +157,14 @@ const ElementToEntity = {
       return generator.createEntity(ENTITY_TYPE.IMAGE, data);
     }
   },
+  span(
+    generator: ContentGenerator,
+    tagName: string,
+    element: DOMElement,
+  ): ?string {
+    let data = getEntityData(tagName, element);
+    return generator.createEntity('SPAN', data);
+  },
 };
 
 class ContentGenerator {
