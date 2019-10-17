@@ -108,7 +108,7 @@ const DATA_ATTRIBUTE = /^data-([a-z0-9-]+)$/;
 
 // Map element attributes to entity data.
 const ELEM_ATTR_MAP = {
-  a: {href: 'url', rel: 'rel', target: 'target', title: 'title', clicktracking: 'clicktracking'},
+  a: {href: 'url', rel: 'rel', target: 'target', title: 'title', clicktracking: 'clicktracking', universal: 'universal'},
   img: {src: 'src', alt: 'alt', class: 'className', style: 'style', height: 'height', width: 'width'},
   span: {class: 'className', style: 'style'},
 };
