@@ -173,7 +173,16 @@ describe('stateFromElement', () => {
   });
 
   it('should support images', () => {
-    let imageNode = new ElementNode('img', [{name: 'src', value: 'imgur.com/asdf.jpg'}]);
+    let imageNode = new ElementNode(
+      'img',
+      [
+        {name: 'src', value: 'imgur.com/asdf.jpg'},
+        {name: 'height', value: '40'},
+        {name: 'width', value: '40'},
+        {name: 'class', value: 'myClass'},
+        {name: 'style', value: 'color: red;'},
+      ],
+    );
     let wrapperElement = new ElementNode('div', [], [imageNode]);
     let contentState = stateFromElement(wrapperElement);
     let rawContentState = removeBlockKeys(convertToRaw(contentState));
@@ -196,6 +205,10 @@ describe('stateFromElement', () => {
         '0': {
           data: {
             src: 'imgur.com/asdf.jpg',
+            height: '40',
+            width: '40',
+            className: 'myClass',
+            style: 'color: red;',
           },
           mutability: 'MUTABLE',
           type: 'IMAGE',

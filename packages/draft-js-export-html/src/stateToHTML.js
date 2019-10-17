@@ -76,6 +76,7 @@ const ENTITY_ATTR_MAP: {[entityType: string]: AttrMap} = {
     title: 'title',
     className: 'class',
     clicktracking: 'clicktracking',
+    universal: 'universal',
   },
   [ENTITY_TYPE.IMAGE]: {
     src: 'src',
@@ -83,6 +84,11 @@ const ENTITY_ATTR_MAP: {[entityType: string]: AttrMap} = {
     width: 'width',
     alt: 'alt',
     className: 'class',
+    style: 'style',
+  },
+  SPAN: {
+    className: 'class',
+    style: 'style',
   },
 };
 

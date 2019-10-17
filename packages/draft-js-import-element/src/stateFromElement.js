@@ -108,8 +108,9 @@ const DATA_ATTRIBUTE = /^data-([a-z0-9-]+)$/;
 
 // Map element attributes to entity data.
 const ELEM_ATTR_MAP = {
-  a: {href: 'url', rel: 'rel', target: 'target', title: 'title', clicktracking: 'clicktracking'},
-  img: {src: 'src', alt: 'alt'},
+  a: {href: 'url', rel: 'rel', target: 'target', title: 'title', clicktracking: 'clicktracking', universal: 'universal'},
+  img: {src: 'src', alt: 'alt', class: 'className', style: 'style', height: 'height', width: 'width'},
+  span: {class: 'className', style: 'style'},
 };
 
 const getEntityData = (tagName: string, element: DOMElement) => {
@@ -155,6 +156,14 @@ const ElementToEntity = {
     if (data.src != null) {
       return generator.createEntity(ENTITY_TYPE.IMAGE, data);
     }
+  },
+  span(
+    generator: ContentGenerator,
+    tagName: string,
+    element: DOMElement,
+  ): ?string {
+    let data = getEntityData(tagName, element);
+    return generator.createEntity('SPAN', data);
   },
 };
 
